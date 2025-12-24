@@ -112,7 +112,7 @@ public class binaryOperator{
         for(int i=0;i<arr.length-1;i++){
             if(duplicate[i]==true) continue;
             for(int j=i+1;j<arr.length;j++){
-                if(arr[i]==arr[j]){
+                if(arr[i]==arr[j){
                     duplicate[j] = true;
                     count+=1;
                 }
