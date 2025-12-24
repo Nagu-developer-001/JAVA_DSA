@@ -1,3 +1,7 @@
+
+import java.util.Scanner;
+
+
 public class binaryOperator{
     public static void evenOrOdd(int n){
         //int i =1;
@@ -76,6 +80,32 @@ public class binaryOperator{
         }
         System.out.println("Ans := "+ans);
     }
+    public static void UniqueNumber(int arr[]){
+        System.out.println("Do Input = ");
+        //Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0;i<arr.length;i++){
+            arr[i] = sc.nextInt();
+        }
+        int unique = 0;
+        for(int i = 0;i<arr.length;i++){
+            unique = unique ^ arr[i];
+        }
+        System.out.println("Unique element in the array is ==>>"+unique);
+    }
+    public static void findUnique(int arr[]){
+        System.out.println("Do Input = ");
+        //Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0;i<arr.length;i++){
+            arr[i] = sc.nextInt();
+        }
+        int unique = 0;
+        for(int i = 0;i<arr.length;i++){
+            unique = unique ^ arr[i];
+        }
+        System.out.println("Unique element in the array is ==>>"+unique);
+    }
     public static void main(String[] args){
         int num1 = 10;
         int num2 = 5;
@@ -86,16 +116,18 @@ public class binaryOperator{
         System.out.println("COMPLEMENT OPERATOR FOR "+num1+" :"+(~num2));
         System.out.println("LEFT SHIFT OPERATOR :"+(num1<<num2));
         System.out.println("RIGHT SHIFT OPERATOR :"+(num1>>num2));
-        evenOrOdd(num1);
-        getIBit(num1,0);
-        setIBit(num1,2);
-        //clearBit(num1,3);
-        toggleBit(num1,3);
-        updateBit(num1,3,0);
-        ClearIBit(num1,2);
-        RangeBits(num1,2,1);
-        CountSetBits(num1);
-        powerOfTwo(4);
-        FastExpo(3,5);
+        // evenOrOdd(num1);
+        // getIBit(num1,0);
+        // setIBit(num1,2);
+        // //clearBit(num1,3);
+        // toggleBit(num1,3);
+        // updateBit(num1,3,0);
+        // ClearIBit(num1,2);
+        // RangeBits(num1,2,1);
+        // CountSetBits(num1);
+        // powerOfTwo(4);
+        // FastExpo(3,5);
+        UniqueNumber(new int[5]);
+        findUnique(new int[5]);
     }
 }
