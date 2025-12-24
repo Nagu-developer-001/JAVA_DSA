@@ -106,6 +106,22 @@ public class binaryOperator{
         }
         System.out.println("Unique element in the array is ==>>"+unique);
     }
+    public static void findDuplicates(int arr[]){
+        int count = 1;
+        boolean[] duplicate = new boolean[32];
+        for(int i=0;i<arr.length-1;i++){
+            if(duplicate[i]==true) continue;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    duplicate[j] = true;
+                    count+=1;
+                }
+            }
+        }
+        if(count>1){
+            System.out.println(count+" many duplicate elements are there...");
+        }
+    }
     public static void main(String[] args){
         int num1 = 10;
         int num2 = 5;
@@ -127,7 +143,8 @@ public class binaryOperator{
         // CountSetBits(num1);
         // powerOfTwo(4);
         // FastExpo(3,5);
-        UniqueNumber(new int[5]);
-        findUnique(new int[5]);
+        // UniqueNumber(new int[5]);
+        // findUnique(new int[5]);
+        findDuplicates(new int[]{1,2,2,4,3,4,2});
     }
 }
