@@ -122,6 +122,16 @@ public class binaryOperator{
             System.out.println(count+" many duplicate elements are there...");
         }
     }
+    public static void evenOdd(int n){
+        int div = n/2;
+        int mul = div*2;
+        System.err.println(mul);
+        if(n-mul==0){
+            System.out.println("even");
+        }else{
+            System.out.println("odd");
+        }
+    }
     public static void main(String[] args){
         int num1 = 10;
         int num2 = 5;
@@ -129,7 +139,7 @@ public class binaryOperator{
         System.out.println("OR OPERATOR :"+(num1 | num2));
         System.out.println("XOR OPERATOR :"+(num1 ^ num2));
         System.out.println("COMPLEMENT OPERATOR FOR "+num1+" :"+(~num1));
-        System.out.println("COMPLEMENT OPERATOR FOR "+num1+" :"+(~num2));
+        System.out.println("COMPLEMENT OPERATOR FOR "+num2+" :"+(~num2));
         System.out.println("LEFT SHIFT OPERATOR :"+(num1<<num2));
         System.out.println("RIGHT SHIFT OPERATOR :"+(num1>>num2));
         // evenOrOdd(num1);
@@ -146,5 +156,6 @@ public class binaryOperator{
         // UniqueNumber(new int[5]);
         // findUnique(new int[5]);
         findDuplicates(new int[]{1,2,2,4,3,4,2});
+        evenOdd(16);
     }
 }
