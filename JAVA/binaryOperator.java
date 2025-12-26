@@ -122,7 +122,7 @@ public class binaryOperator{
             System.out.println(count+" many duplicate elements are there...");
         }
     }
-    public static vid evenOdd(int n){
+    public static void evenOdd(int n){
         int div = n/2;
         int mul = div*2;
         System.err.println(mul);
