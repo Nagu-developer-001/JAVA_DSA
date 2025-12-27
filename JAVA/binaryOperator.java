@@ -122,6 +122,20 @@ public class binaryOperator{
             System.out.println(count+" many duplicate elements are there...");
         }
     }
+    /*
+    class Solution {
+    public void rotate(int[] nums, int k) {
+        for(int i = 0;i<k;i++){
+            move = i;
+            lastEle = nums[nums.length-i-1];
+            while(k>=0){
+                nums[move+1] = nums[move]; 
+                k--;
+            }
+            nums[i] = lastEle;
+        }
+}
+    */
     public static void evenOdd(int n){
         int div = n/2;
         int mul = div*2;
@@ -156,6 +170,6 @@ public class binaryOperator{
         // UniqueNumber(new int[5]);
         // findUnique(new int[5]);
         findDuplicates(new int[]{1,2,2,4,3,4,2});
-        evenOdd(16);
+        evenOdd(16)
     }
 }
