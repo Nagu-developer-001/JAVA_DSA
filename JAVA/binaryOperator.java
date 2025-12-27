@@ -170,6 +170,6 @@ public class binaryOperator{
         // UniqueNumber(new int[5]);
         // findUnique(new int[5]);
         findDuplicates(new int[]{1,2,2,4,3,4,2});
-        evenOdd(16)
+        evenOdd(16);
     }
 }
