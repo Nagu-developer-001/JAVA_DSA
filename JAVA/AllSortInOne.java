@@ -179,7 +179,7 @@ public class AllSortInOne{
             }
             int mid = si + (ei - si)/2;
             if(arr[mid] == target){
-                return mid;
+                return mid
             }
             if(arr[si]<=arr[mid]){
                 if(arr[si]<=target && target<=arr[mid]){
