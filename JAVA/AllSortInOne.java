@@ -232,7 +232,7 @@ public class AllSortInOne{
                 count+=1;
             }
         }
-        return count
+        return count;
     }
     public static int arrayPairSum(int[] nums) {
         Arrays.sort(nums);
