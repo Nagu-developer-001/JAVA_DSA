@@ -391,7 +391,7 @@ public class AllSortInOne{
         }
     }
     public static void main(String args[]){
-        //int arr[] = {6,2,6,5,1,2};
+        int arr[] = {6,2,6,5,1,2};
         //BubbleSort(arr);
         //SelectionSort(arr);
         //InsertionSort(arr);
@@ -406,8 +406,8 @@ public class AllSortInOne{
         //mergeSort(arr, 0, arr.length-1);
         //int mejor = mejorityElement(arr);
         //System.out.print(mejor);
-        //QuickSort(arr, 0, arr.length-1);
-        //System.out.println(Arrays.toString(arr));
+        QuickSort(arr, 0, arr.length-1);
+        System.out.println(Arrays.toString(arr));
         //Subset("abc","",0);
         //Permutaion("abc","");
         // char board[][] = new char[4][4];
@@ -423,22 +423,22 @@ public class AllSortInOne{
         //int val = SearchInSortedArray(arr, 0, arr.length-1, target);
         //Inversion(arr);
         //System.out.print(max);
-        int sudoku[][] = {
-            {5 ,3 ,0 ,0 ,7 ,0 ,0 ,0 ,0},
-            {6 ,0 ,0 ,1 ,9 ,5 ,0 ,0, 0},
-            {0 ,9, 8, 0, 0, 0, 0, 6, 0},
-            {8 ,0 ,0 ,0 ,6 ,0 ,0 ,0 ,3},
-            {4 ,0, 0, 8, 0, 3, 0, 0, 1},
-            {7 ,0 ,0 ,0 ,2 ,0 ,0 ,0 ,6},
-            {0 ,6, 0, 0, 0, 0, 2, 8, 0},
-            {0 ,0 ,0 ,4 ,1 ,9 ,0 ,0 ,5},
-            {0 ,0, 0, 0, 8, 0, 0, 7, 9},
-        };
-        boolean find = AddNumToSudoku(sudoku, 0, 0);
-        if(find){
-            System.out.println("Solution is possible");
-            Print2DArray(sudoku);}
-        else{
-            System.out.println("Solution is not possible"); }
+        // int sudoku[][] = {
+        //     {5 ,3 ,0 ,0 ,7 ,0 ,0 ,0 ,0},
+        //     {6 ,0 ,0 ,1 ,9 ,5 ,0 ,0, 0},
+        //     {0 ,9, 8, 0, 0, 0, 0, 6, 0},
+        //     {8 ,0 ,0 ,0 ,6 ,0 ,0 ,0 ,3},
+        //     {4 ,0, 0, 8, 0, 3, 0, 0, 1},
+        //     {7 ,0 ,0 ,0 ,2 ,0 ,0 ,0 ,6},
+        //     {0 ,6, 0, 0, 0, 0, 2, 8, 0},
+        //     {0 ,0 ,0 ,4 ,1 ,9 ,0 ,0 ,5},
+        //     {0 ,0, 0, 0, 8, 0, 0, 7, 9},
+        // };
+        // boolean find = AddNumToSudoku(sudoku, 0, 0);
+        // if(find){
+        //     System.out.println("Solution is possible");
+        //     Print2DArray(sudoku);}
+        // else{
+        //     System.out.println("Solution is not possible"); }
     }    
 }
