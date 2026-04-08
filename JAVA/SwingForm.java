@@ -76,7 +76,7 @@ public class SwingForm extends JFrame implements ActionListener
         if(e.getSource()==submit)
         {
             String name = nameField.getText();
-
+            //String gender= male.isSelected() ? "
 
             JFrame f = new JFrame("Info");
             JLabel l = new JLabel("Registered Successfully " + name);

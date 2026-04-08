@@ -28,7 +28,6 @@ public class TypedTextDisplay extends JFrame implements KeyListener
     {
         label.setText("Typed text : " + text.getText());
     }
-
     public void keyPressed(KeyEvent e) {}
     public void keyTyped(KeyEvent e) {}
 
