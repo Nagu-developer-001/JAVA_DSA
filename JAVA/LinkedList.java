@@ -7,11 +7,27 @@ public class LinkedList{
             this.next = null;
         }
     }
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+    public void print(){
+        Node temp = head;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
     public static Node head;
     public static Node tail;
     public static void main(String x[]){
         LinkedList ll = new LinkedList();
-        ll.head = new Node(5);
-        ll.head.next = new Node(4);
+        ll.addFirst(5);
+        ll.addFirst(4);
+        ll.addFirst(3);
+        ll.addFirst(2);
+        ll.addFirst(1);
+        ll.print();
     }
 }
