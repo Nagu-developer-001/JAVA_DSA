@@ -7,10 +7,21 @@ public class LinkedList{
             this.next = null;
         }
     }
+    //TODO: addLast, addMiddle, removeFirst, removeLast, removeMiddle, search, reverse
     public void addFirst(int data){
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
+    }
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail = newNode;
     }
     public void print(){
         Node temp = head;
