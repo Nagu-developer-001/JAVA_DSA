@@ -49,6 +49,50 @@ public class LinkedList{
         tail = newNode;
         
     }
+    public int removeFirst(){
+        if(size==0){
+            System.out.println("LL is empty!!");
+            return -999;
+        }else if(size==1){
+            head=tail=null;
+            return -999;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
+    public int removeLast(){
+        if(size==0){
+            System.out.println("LL is empty!!");
+            return -999;
+        }else if(size==1){
+            head=tail=null;
+            return -999;
+        }
+        int i=0;
+        Node prev = head;
+        while(i<size-2){
+            prev = prev.next;
+            i++;
+        }
+        int val = tail.data;
+        prev.next = null;
+        size--;
+        return val;
+    }
+    public int removeMiddle(int idx){
+        int i =0;
+        Node prev = head;
+        while(i<idx-1){
+            prev = prev.next;
+            i++; 
+        }
+        int val = prev.next.data;
+        prev.next = tail;
+        size--;
+        return val;
+    }
     public void print(){
         Node temp = head;
         while(temp!=null){
@@ -66,7 +110,16 @@ public class LinkedList{
         ll.addFirst(3);
         ll.addLast(4);
         ll.addMiddle(1,2);
+        // ll.print();
+        // System.out.print("\nSize = "+size+"\n");
+        // int val = ll.removeFirst();
+        // ll.print();
+        // System.out.print("\nSize = "+size+"\nvalue Removed is"+val+"\n");
+        // val = ll.removeLast();
         ll.print();
-        System.out.print("\nSize = "+size);
+        System.out.print("\nSize = "+size+"\n");
+        int val = ll.removeMiddle(2);
+        System.out.print("\nSize = "+size+"\nvalue Removed is "+val+"\n");
+        ll.print();
     }
 }
