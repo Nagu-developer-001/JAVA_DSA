@@ -93,6 +93,18 @@ public class LinkedList{
         size--;
         return val;
     }
+    public int search(int key){
+        Node temp = head;
+        int i=0;
+        while(temp!=null){
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -999;
+    }
     public void print(){
         Node temp = head;
         while(temp!=null){
@@ -116,10 +128,11 @@ public class LinkedList{
         // ll.print();
         // System.out.print("\nSize = "+size+"\nvalue Removed is"+val+"\n");
         // val = ll.removeLast();
+        int n = ll.search(1);
         ll.print();
-        System.out.print("\nSize = "+size+"\n");
+        System.out.print("\nSize = "+size+"\n"+"index of 3 is "+n);
         int val = ll.removeMiddle(2);
-        System.out.print("\nSize = "+size+"\nvalue Removed is "+val+"\n");
+        System.out.print("\n Size = "+size+" \n value Removed is "+val+"\n");
         ll.print();
     }
 }
