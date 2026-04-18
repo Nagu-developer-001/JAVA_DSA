@@ -89,9 +89,21 @@ public class LinkedList{
             i++; 
         }
         int val = prev.next.data;
-        prev.next = tail;
+        prev.next = prev.next.next;
         size--;
         return val;
+    }
+    public void reverse(){
+        Node prev = null;
+        Node curr = head;
+        Node next;
+        while(curr!=null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
     }
     public int search(int key){
         Node temp = head;
@@ -104,6 +116,22 @@ public class LinkedList{
             i++;
         }
         return -999;
+    }
+    public int helper(Node head, int key) {
+    if (head == null) {
+        return -999; // sentinel value meaning "not found"
+    }
+    if (key == head.data) {
+        return 0;
+    }
+    int idx = helper(head.next, key);
+    if (idx == -999) {
+        return -999;
+    }
+    return idx + 1;
+}
+    public int recurseSearch(int key){
+        return helper(head,key);
     }
     public void print(){
         Node temp = head;
@@ -128,11 +156,15 @@ public class LinkedList{
         // ll.print();
         // System.out.print("\nSize = "+size+"\nvalue Removed is"+val+"\n");
         // val = ll.removeLast();
-        int n = ll.search(1);
+        //int n = ll.search(1);
+        //int m = ll.recurseSearch(9);
+        //ll.print();
+        //System.out.print("\nSize = "+size+"\n"+"index of 3 is "+n+", recursive search gives "+m);
+        //int val = ll.removeMiddle(2);
+        //System.out.print("\n Size = "+size+" \n value Removed is "+val+"\n");
         ll.print();
-        System.out.print("\nSize = "+size+"\n"+"index of 3 is "+n);
-        int val = ll.removeMiddle(2);
-        System.out.print("\n Size = "+size+" \n value Removed is "+val+"\n");
+        ll.reverse();
+        System.out.println();
         ll.print();
     }
 }
