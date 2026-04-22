@@ -141,6 +141,40 @@ public class LinkedList{
         }
         System.out.print(temp);
     }
+    public Node findMid(){
+        Node slow = head;
+        Node fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public boolean checkPalindrome(){
+        if(head.next == null&&head == null){
+            return false;
+        }
+        Node mid = findMid();
+        Node precv = null;
+        Node curr = mid;
+        Node next;
+        while(curr!=null){
+            next = curr.next;
+            curr.next = precv;
+            precv = curr;
+            curr = next;
+        }
+        Node right = precv;
+        Node left =head;
+        while(left!=null && right!=null){
+            if(left.data!=right.data){
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
     public static Node head;
     public static Node tail;
     public static int size;
