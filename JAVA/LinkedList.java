@@ -175,15 +175,28 @@ public class LinkedList{
         }
         return true;
     }
+    public boolean checkCycle(){
+        Node slow = head;
+        Node fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast){
+                return true;
+            }
+        }
+        return false;
+    }
     public static Node head;
     public static Node tail;
     public static int size;
     public static void main(String x[]){
         LinkedList ll = new LinkedList();
-        ll.addFirst(1);
-        ll.addFirst(3);
-        ll.addLast(4);
-        ll.addMiddle(1,2);
+        // Node temp = new ll.Node(4);
+        // ll.addFirst(1);
+        // ll.addFirst(3);
+        // ll.addLast(4);
+        // ll.addMiddle(1,2);
         // ll.print();
         // System.out.print("\nSize = "+size+"\n");
         // int val = ll.removeFirst();
@@ -193,12 +206,21 @@ public class LinkedList{
         //int n = ll.search(1);
         //int m = ll.recurseSearch(9);
         //ll.print();
-        //System.out.print("\nSize = "+size+"\n"+"index of 3 is "+n+", recursive search gives "+m);
-        //int val = ll.removeMiddle(2);
-        //System.out.print("\n Size = "+size+" \n value Removed is "+val+"\n");
-        ll.print();
-        ll.reverse();
-        System.out.println();
-        ll.print();
+        // System.out.println("Cycle =  "+ll.checkCycle());
+        // ll.print();
+
+        // int val = ll.removeMiddle(2);
+        // System.out.print("\n Size = "+size+" \n value Removed is "+val+"\n");
+        // ll.print();
+        // ll.reverse();
+        // System.out.println();
+        // ll.print();
+        head = new Node(1);
+        Node temp = new Node(4);
+        head.next = temp;
+        head.next.next = new Node(3);
+        head.next.next.next =temp;
+        System.out.println("Cycle =  "+ll.checkCycle());
+
     }
 }
