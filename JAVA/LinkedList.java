@@ -187,6 +187,34 @@ public class LinkedList{
         }
         return false;
     }
+    public void removeCycle(){
+        Node slow = head;
+        Node fast = head;
+        boolean cyclic = false;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast){
+                cyclic = true;
+                break;
+            }
+        }
+        if(cyclic==false)
+        {
+            return;
+        }
+        slow = head;
+        Node prev = null;
+        while(fast!=null && fast.next!=null){
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+            if(slow==fast){
+                break;
+            }
+        }
+        prev.next = null;
+    }
     public static Node head;
     public static Node tail;
     public static int size;
@@ -220,7 +248,10 @@ public class LinkedList{
         head.next = temp;
         head.next.next = new Node(3);
         head.next.next.next =temp;
+        //ll.print();
         System.out.println("Cycle =  "+ll.checkCycle());
-
+        ll.removeCycle();
+        ll.print();
+        System.out.println("Cycle =  "+ll.checkCycle());
     }
 }
