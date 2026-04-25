@@ -215,17 +215,70 @@ public class LinkedList{
         }
         prev.next = null;
     }
+    public Node findMiddle(Node head){
+        Node slow = head;
+        Node fast = head.next;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public Node merge(Node leftSide,Node rightSide)
+    {
+        Node mergedLL = new Node(-1);
+        Node temp = mergedLL;
+        while(leftSide!=null && rightSide!=null){
+            if(leftSide.data<=rightSide.data){
+                temp.next = leftSide;
+                leftSide = leftSide.next;
+                temp = temp.next;
+            }else{
+                temp.next = rightSide;
+                rightSide = rightSide.next;
+                temp = temp.next;
+            }
+            }
+            
+        while(leftSide!=null){
+                temp.next = leftSide;
+                leftSide = leftSide.next;
+                temp = temp.next;
+            }
+            while(rightSide!=null){
+                temp.next = rightSide;
+                rightSide = rightSide.next;
+                temp = temp.next;
+            }
+        
+        return mergedLL.next;
+    }
+    public Node mergeSort(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node mid = findMiddle(head);
+        Node rightNode = mid.next;
+        mid.next = null;
+        Node leftSide = mergeSort(head);
+        Node rightSide = mergeSort(rightNode);
+        return merge(leftSide,rightSide);
+    }
+    
     public static Node head;
     public static Node tail;
     public static int size;
     public static void main(String x[]){
         LinkedList ll = new LinkedList();
         // Node temp = new ll.Node(4);
-        // ll.addFirst(1);
-        // ll.addFirst(3);
-        // ll.addLast(4);
-        // ll.addMiddle(1,2);
-        // ll.print();
+        ll.addFirst(5);
+        ll.addFirst(3);
+        ll.addLast(2);
+        ll.addLast(1);
+        //ll.addMiddle(1,2);
+        ll.print();
+        ll.head = ll.mergeSort(ll.head);
+        ll.print();
         // System.out.print("\nSize = "+size+"\n");
         // int val = ll.removeFirst();
         // ll.print();
