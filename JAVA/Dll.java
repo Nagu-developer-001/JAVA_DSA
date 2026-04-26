@@ -23,6 +23,18 @@ public class Dll{
         head = newNode;
         size++;
     }
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        if(head== null){
+            head=tail=newNode;
+            return;
+        }
+        tail.next = newNode;
+        newNode.next=null;
+        newNode.prev = tail;
+        tail = newNode;
+        size++;
+    }
     public void removeFirst(){
         if(size==0){
             System.out.println("DLL is empty!!");
@@ -35,6 +47,58 @@ public class Dll{
         head = head.next;
         head.prev = null;
         size--;
+    }
+    public void removeLast(){
+        if(size==0){
+            System.out.println("The DLL is empty!!");
+            return;
+        }
+        if(size==1){
+            head=tail=null;
+            return;
+        }
+        tail = tail.prev;
+        tail.next = null;
+        size--;
+    }
+    public void addMid(int data,int idx){
+        Node newNode = new Node(data);
+        Node temp = head;
+        Node prev = null;
+        for(int i=0;i<idx-1;i++){
+            prev = temp;
+            temp = temp.next;
+        }
+        newNode.next = temp;
+        newNode.prev = prev;
+        temp.prev = newNode;
+        if(prev != null){
+            prev.next = newNode;
+        }
+        else{
+            head = newNode;
+        }  
+    }
+    public void removeMid(int idx){
+        Node temp = head;
+        Node prev = null;
+        for(int i=0;i<idx-1;i++){
+            prev = temp;
+            temp = temp.next;
+        }
+        if(temp == null){
+            System.out.println("Index out of bounds!!");
+            return;
+        }
+        if(prev == null){
+            head = temp.next;
+        }
+        if(temp.next != null){
+            temp.next.prev = prev;
+        }
+        if(prev != null){
+            prev.next = temp.next;
+        }
     }
     public void print(){
         Node temp = head;
@@ -64,15 +128,17 @@ public class Dll{
     public static void main(String x[]){
         Dll dll = new Dll();
         dll.addFirst(1);
-        dll.addFirst(10);
-        dll.addFirst(3);
         dll.addFirst(2);
-        //dll.print();
-        //dll.removeFirst();
-        //dll.print();
-        //dll.removeFirst();
+        dll.addFirst(3);
+        dll.addFirst(4);
+        //dll.addLast(7);
         dll.print();
-        dll.reverse();
+        dll.removeMid(1);
+        //dll.print();
+        //dll.removeFirst();
+        //dll.print();
+        //dll.removeFirst();
+        //dll.reverse();
         dll.print();
     }
 }
