@@ -264,20 +264,58 @@ public class LinkedList{
         Node rightSide = mergeSort(rightNode);
         return merge(leftSide,rightSide);
     }
-    
+    public Node findMidOne(Node head){
+        Node slow = head;
+        Node fast = head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public Node zigZag(Node head){
+        Node mid = findMidOne(head);
+        Node rightNode = mid.next;
+        mid.next = null;
+        Node leftNode = head;
+        Node curr = rightNode;
+        Node next;
+        Node prev = null;
+        while(curr!=null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        rightNode = prev;
+        Node LM = leftNode;
+        Node RM = rightNode;
+        Node nextL,nextR;
+        while(LM!=null&&RM!=null){
+            nextL = LM.next;
+            LM.next = RM;
+            nextR = RM.next;
+            RM.next = nextL;
+            LM=nextL;
+            RM = nextR;
+        }
+        return head;
+    }
     public static Node head;
     public static Node tail;
     public static int size;
     public static void main(String x[]){
         LinkedList ll = new LinkedList();
         // Node temp = new ll.Node(4);
+        ll.addFirst(6);
         ll.addFirst(5);
-        ll.addFirst(3);
+        ll.addLast(3);
         ll.addLast(2);
         ll.addLast(1);
+        ll.addLast(0);
         //ll.addMiddle(1,2);
         ll.print();
-        ll.head = ll.mergeSort(ll.head);
+        ll.head = ll.zigZag(ll.head);
         ll.print();
         // System.out.print("\nSize = "+size+"\n");
         // int val = ll.removeFirst();
