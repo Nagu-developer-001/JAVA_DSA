@@ -96,7 +96,7 @@ public class Stacks{
         // createStack.push(10);
         // createStack.push(30);
         // System.out.println(createStack.peek());
-        int stocks[] = {100,80,60,70,60,85,100};
+        int stocks[] = {100,80,60,70,60,85,100,120};
         int span[] = stockSpan(stocks);
         for(int i=0;i<span.length;i++){
             System.out.print(span[i] + " ");
