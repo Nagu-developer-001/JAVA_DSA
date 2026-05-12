@@ -16,7 +16,8 @@ public class StacksProblem {
             s.push(arr[i]);
         } 
         return ans;
-    } 
+    }
+    
     public static void main(String[] args) {
         Stack<Integer> s = new Stack<>();
         s.push(1);
