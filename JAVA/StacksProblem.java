@@ -15,7 +15,7 @@ public class StacksProblem {
             ans[i] = NG;
             s.push(arr[i]);
         } 
-        return ans
+        return ans;
     }
     
     public static void main(String[] args) {
