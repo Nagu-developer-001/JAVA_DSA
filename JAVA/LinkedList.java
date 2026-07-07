@@ -9,7 +9,7 @@ public class LinkedList{
     }
     //TODO: addLast, addMiddle, removeFirst, removeLast, removeMiddle, search, reverse
     public void addFirst(int data){
-        Node newNode = new Node(data);
+        Node newNode = new Node(data)
         size++;
         if(head == null){
             head = newNode;
