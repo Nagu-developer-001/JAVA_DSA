@@ -1,31 +1,32 @@
 import java.util.*;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 public class Classroom {
-    static class Queue{
-        java.util.Deque<Integer> dq = new java.util.LinkedList<>();
-        public void add(int data){
-            dq.addLast(data);
-        }
-        public int remove(){
-            return(dq.removeFirst());
-        }
-        public int peek(){
-            return(dq.getFirst());
-        }
-    }
-    static class Stack{
-        Deque<Integer> dq = new LinkedList<>();
-        public void push(int data){
-            dq.addLast(data);
-        }
-        public int pop(){
-            return(dq.removeLast());
-        }
-        public int peek(){
-            return(dq.getLast());
-        }
-    }
+    // static class Queue{
+    //     java.util.Deque<Integer> dq = new java.util.LinkedList<>();
+    //     public void add(int data){
+    //         dq.addLast(data);
+    //     }
+    //     public int remove(){
+    //         return(dq.removeFirst());
+    //     }
+    //     public int peek(){
+    //         return(dq.getFirst());
+    //     }
+    // }
+    // static class Stack{
+    //     Deque<Integer> dq = new LinkedList<>();
+    //     public void push(int data){
+    //         dq.addLast(data);
+    //     }
+    //     public int pop(){
+    //         return(dq.removeLast());
+    //     }
+    //     public int peek(){
+    //         return(dq.getLast());
+    //     }
+    // }
     public static void reverse(java.util.Queue<Integer> q){
 java.util.Stack<Integer> st = new java.util.Stack<>();
         while(!q.isEmpty()){
@@ -65,6 +66,21 @@ java.util.Stack<Integer> st = new java.util.Stack<>();
             }
         }
     }
+    public static int FindMinCost(int[] arr){
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for(int i=0;i<arr.length;i++){
+            pq.add(arr[i]);
+        }
+        int res = 0;
+        while(pq.size()>1){
+            int first = pq.poll();
+            int second = pq.poll();
+            int sm = first + second;;
+            res+=sm;
+            pq.add(sm);
+        }
+        return res;
+    }
     public static void main(String[] args) {
         //String str = "aabccxb";
         //FirstNonRepeatingCharacter(str);
@@ -99,15 +115,17 @@ java.util.Stack<Integer> st = new java.util.Stack<>();
         // while(!s.dq.isEmpty()){
         //     System.out.print(s.pop() + " ");
         // }
-        Queue q = new Queue();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        q.add(4);
-        q.add(5);
-        System.out.println(q.peek());
-        while(!q.dq.isEmpty()){
-            System.out.print(q.remove()+ " ");
-        }
+        // Queue q = new Queue();
+        // q.add(1);
+        // q.add(2);
+        // q.add(3);
+        // q.add(4);
+        // q.add(5);
+        // System.out.println(q.peek());
+        // while(!q.dq.isEmpty()){
+        //     System.out.print(q.remove()+ " ");
+        // }
+        int cost =FindMinCost(new int[]{4, 3, 2, 6});
+        System.out.println(cost);
     }
 }
