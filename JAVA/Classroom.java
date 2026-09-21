@@ -75,9 +75,8 @@ java.util.Stack<Integer> st = new java.util.Stack<>();
         while(pq.size()>1){
             int first = pq.poll();
             int second = pq.poll();
-            int sm = first + second;;
-            res+=sm;
-            pq.add(sm);
+            res+=first + second;
+            pq.add(first + second);
         }
         return res;
     }
