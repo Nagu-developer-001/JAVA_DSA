@@ -148,6 +148,11 @@ java.util.Stack<Integer> st = new java.util.Stack<>();
         q.add(80);
         q.add(90);
         q.add(100);
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        q.add(4);
+        q.add(5);
         reverseKElement(5, q);
         System.out.println(q);
     }
