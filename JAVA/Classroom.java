@@ -80,10 +80,22 @@ java.util.Stack<Integer> st = new java.util.Stack<>();
         }
         return res;
     }
+    public static void reverseKElement(int k, java.util.Queue<Integer> q){
+        java.util.Stack<Integer> st = new java.util.Stack<>();
+        for(int i=0;i<k;i++){
+            st.push(q.remove());
+        }
+        while(!st.isEmpty()){
+            q.add(st.pop());
+        }
+        for(int i=0;i<q.size()-k;i++){
+            q.add(q.remove());
+        }
+    }
     public static void main(String[] args) {
         //String str = "aabccxb";
         //FirstNonRepeatingCharacter(str);
-        //Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();
         // q.add(1);
         // q.add(2);
         // q.add(3);
@@ -124,7 +136,19 @@ java.util.Stack<Integer> st = new java.util.Stack<>();
         // while(!q.dq.isEmpty()){
         //     System.out.print(q.remove()+ " ");
         // }
-        int cost =FindMinCost(new int[]{4, 3, 2, 6});
-        System.out.println(cost);
+        //int cost =FindMinCost(new int[]{4, 3, 2, 6});
+        //System.out.println(cost);
+        q.add(10);
+        q.add(20);
+        q.add(30);
+        q.add(40);
+        q.add(50);
+        q.add(60);
+        q.add(70);
+        q.add(80);
+        q.add(90);
+        q.add(100);
+        reverseKElement(5, q);
+        System.out.println(q);
     }
 }
