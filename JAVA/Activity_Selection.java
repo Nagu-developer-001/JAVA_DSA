@@ -29,7 +29,6 @@ public class Activity_Selection{
         }
         System.out.println("Maximum activities: "+maxAct);
         System.out.println("Selected activities: "+ans);
-        System.out.println("Maximum activities: "+maxAct);
-        System.out.println("Selected activities: "+ans);
+        
     }
 }
