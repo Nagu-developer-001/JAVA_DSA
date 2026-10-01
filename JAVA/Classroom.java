@@ -154,6 +154,7 @@ java.util.Stack<Integer> st = new java.util.Stack<>();
         q.add(4);
         q.add(5);
         reverseKElement(5, q);
+        reverseKElement(5, q);
         System.out.println(q);
     }
 }
